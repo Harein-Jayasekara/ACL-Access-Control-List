@@ -1,0 +1,60 @@
+
+Router#access
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#acces
+Router(config)#access-list 10 deny 192.168.20.5
+Router(config)#ip acc
+Router(config)#ip access-list 10 ?
+% Unrecognized command
+Router(config)#ip access-list ?
+  extended  Extended Access List
+  standard  Standard Access List
+Router(config)#ip access-list sta
+Router(config)#ip access-list standard ?
+  <1-99>  Standard IP access-list number
+  WORD    Access-list name
+Router(config)#ip access-list standard 10 ?
+  <cr>
+Router(config)#ip access-list standard 10 
+Router(config-std-nacl)#exit
+Router(config)#
+
+========================================================================================
+========================================================================================
+Router(config)#
+Router(config)#
+Router(config)#
+Router(config)#hostname ROUTER_ONE
+ROUTER_ONE(config)#acce
+ROUTER_ONE(config)#access-list 1 ?
+  deny    Specify packets to reject
+  permit  Specify packets to forward
+  remark  Access list entry comment
+ROUTER_ONE(config)#access-list 1 
+% Incomplete command.
+ROUTER_ONE(config)#acce
+ROUTER_ONE(config)#access-list 1 deny 192.168.20.5
+ROUTER_ONE(config)#acce
+ROUTER_ONE(config)#access-list 1 permit any
+ROUTER_ONE(config)#
+ROUTER_ONE(config)#exit
+ROUTER_ONE#
+%SYS-5-CONFIG_I: Configured from console by console
+
+ROUTER_ONE#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+ROUTER_ONE(config)#
+ROUTER_ONE(config)#
+ROUTER_ONE(config)#int fa0/0
+ROUTER_ONE(config-if)#
+ROUTER_ONE(config-if)#ip acce
+ROUTER_ONE(config-if)#ip access-group ?
+  <1-199>  IP access list (standard or extended)
+  WORD     Access-list name
+ROUTER_ONE(config-if)#ip access-group 1 ?
+  in   inbound packets
+  out  outbound packets
+ROUTER_ONE(config-if)#ip access-group 1 in
+ROUTER_ONE(config-if)#exit
+ROUTER_ONE(config)#

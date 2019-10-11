@@ -1,0 +1,78 @@
+Router>enable
+Router#
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#hostna
+Router(config)#hostname ROUTER_TWO
+ROUTER_TWO(config)#acce
+ROUTER_TWO(config)#access-list 2 ?
+  deny    Specify packets to reject
+  permit  Specify packets to forward
+  remark  Access list entry comment
+ROUTER_TWO(config)#access-list 2 permi
+ROUTER_TWO(config)#access-list 2 permit 192.168.40.1 
+ROUTER_TWO(config)#ip ?
+  access-list       Named access-list
+  cef               Cisco Express Forwarding
+  default-network   Flags networks as candidates for default routes
+  dhcp              Configure DHCP server and relay parameters
+  domain            IP DNS Resolver
+  domain-lookup     Enable IP Domain Name System hostname translation
+  domain-name       Define the default domain name
+  flow-export       Specify host/port to send flow statistics
+  forward-protocol  Controls forwarding of physical and directed IP broadcasts
+  ftp               FTP configuration commands
+  host              Add an entry to the ip hostname table
+  name-server       Specify address of name server to use
+  nat               NAT configuration commands
+  route             Establish static routes
+  scp               Scp commands
+  ssh               Configure ssh options
+  tcp               Global TCP parameters
+ROUTER_TWO(config)#acc
+ROUTER_TWO(config)#access-list ?
+  <1-99>     IP standard access list
+  <100-199>  IP extended access list
+ROUTER_TWO(config)#access-list 2 ?
+  deny    Specify packets to reject
+  permit  Specify packets to forward
+  remark  Access list entry comment
+ROUTER_TWO(config)#access-list 2 deny
+ROUTER_TWO(config)#access-list 2 deny ?
+  A.B.C.D  Address to match
+  any      Any source host
+  host     A single host address
+ROUTER_TWO(config)#access-list 2 deny any ?
+  <cr>
+ROUTER_TWO(config)#access-list 2 deny any 
+ROUTER_TWO(config)#exit
+ROUTER_TWO#
+%SYS-5-CONFIG_I: Configured from console by console
+
+ROUTER_TWO#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+ROUTER_TWO(config)#
+ROUTER_TWO(config)#
+ROUTER_TWO(config)#int fa0/0
+ROUTER_TWO(config-if)#no shut
+ROUTER_TWO(config-if)#
+ROUTER_TWO(config-if)#ip acc
+ROUTER_TWO(config-if)#ip access-group ?
+  <1-199>  IP access list (standard or extended)
+  WORD     Access-list name
+ROUTER_TWO(config-if)#ip access-group 2 ?
+  in   inbound packets
+  out  outbound packets
+ROUTER_TWO(config-if)#ip access-group 2 in ?
+  <cr>
+ROUTER_TWO(config-if)#ip access-group 2 in 
+ROUTER_TWO(config-if)#exit
+ROUTER_TWO(config)#do show ip int br
+Interface              IP-Address      OK? Method Status                Protocol 
+FastEthernet0/0        192.168.40.2    YES manual up                    up 
+FastEthernet1/0        unassigned      YES unset  administratively down down 
+Serial2/0              unassigned      YES unset  administratively down down 
+Serial3/0              unassigned      YES unset  administratively down down 
+FastEthernet4/0        unassigned      YES unset  administratively down down 
+FastEthernet5/0        unassigned      YES unset  administratively down down
+ROUTER_TWO(config)#

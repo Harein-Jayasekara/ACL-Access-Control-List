@@ -1,0 +1,76 @@
+
+Router>
+Router>
+Router>
+Router>
+Router>
+Router>enable
+Router#
+Router#
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#
+Router(config)#
+Router(config)#
+Router(config)#
+Router(config)#
+Router(config)#acess
+Router(config)#acc
+Router(config)#access-list 3 ?
+  deny    Specify packets to reject
+  permit  Specify packets to forward
+  remark  Access list entry comment
+Router(config)#access-list 3 permit 192.168.80.4
+Router(config)#acc
+Router(config)#access-list ?
+  <1-99>     IP standard access list
+  <100-199>  IP extended access list
+Router(config)#access-list 3 ?
+  deny    Specify packets to reject
+  permit  Specify packets to forward
+  remark  Access list entry comment
+Router(config)#access-list 3 deny any
+Router(config)#exit
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#int fa0/0
+           ^
+% Invalid input detected at '^' marker.
+	
+Router#
+Router#
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#
+Router(config)#
+Router(config)#
+Router(config)#int fa0/0
+Router(config-if)#
+Router(config-if)#
+Router(config-if)#nos hut
+                    ^
+% Invalid input detected at '^' marker.
+	
+Router(config-if)#no shut
+Router(config-if)#
+Router(config-if)#ip acc
+Router(config-if)#ip access-group ?
+  <1-199>  IP access list (standard or extended)
+  WORD     Access-list name
+Router(config-if)#ip access-group 3 ?
+  in   inbound packets
+  out  outbound packets
+Router(config-if)#ip access-group 3 out ?
+  <cr>
+Router(config-if)#ip access-group 3 out 
+Router(config-if)#exit
+Router(config)#do show ip int br
+Interface              IP-Address      OK? Method Status                Protocol 
+FastEthernet0/0        192.168.80.2    YES manual up                    up 
+FastEthernet1/0        192.168.70.3    YES manual up                    up 
+Serial2/0              unassigned      YES unset  administratively down down 
+Serial3/0              unassigned      YES unset  administratively down down 
+FastEthernet4/0        unassigned      YES unset  administratively down down 
+FastEthernet5/0        unassigned      YES unset  administratively down down
+Router(config)#
